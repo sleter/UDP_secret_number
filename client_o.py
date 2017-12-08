@@ -4,10 +4,10 @@ import re
 import random
 
 class packet:
-    host = '127.0.0.1'
+    host = '169.254.3.52'
     port = random.randrange(5000,20000) #random not used port
 
-    server = ('127.0.0.1', 5678) #localhost + server port
+    server = ('169.254.3.52', 5678) #localhost + server port
 
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     try:

@@ -4,7 +4,7 @@ import time
 import re
 
 class manage_socket:
-    host = '127.0.0.1' #local address
+    host = '169.254.3.52' #local address
     port = 5678 #random port > 1023
     #-----------------------------------------------------------------------------
     id = []
