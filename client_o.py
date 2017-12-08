@@ -13,7 +13,7 @@ class packet:
     while(true):
         try:
             s.bind((host, port))
-            break;
+            break
         except:
             port +=1
             s.bind((host, port))
@@ -79,11 +79,13 @@ class packet:
         print("Masz {} prób/y \n Wylosowana liczb jest z przedziału <1;9>".format(self.operacja))
 
     def guess(self):
-        try:
-            self.odpowiedz = int(input("Zgadnij liczbę: "))
-        except:
-            print("Podałeś nieprawidłową wartość!")
-            self.odpowiedz= int(input("Zgadnij liczbę: "))
+        while(true):
+            try:
+                self.odpowiedz = int(input("Zgadnij liczbę: "))
+                break
+            except:
+                print("Podałeś nieprawidłową wartość!")
+                self.odpowiedz= int(input("Zgadnij liczbę: "))
         self.odpowiedz = str(self.odpowiedz)
         self.proceed()
         if(self.odpowiedz == 'Win'):
@@ -101,7 +103,7 @@ def Main():
     p.proceed1()
     while p.max != 0:
         if(p.czy_ktos_zgadl):
-            break;
+            break
         p.max -= 1
         p.guess()
 
