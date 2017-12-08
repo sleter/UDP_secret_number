@@ -10,11 +10,13 @@ class packet:
     server = ('169.254.3.52', 5678) #localhost + server port
 
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    try:
-        s.bind((host, port))
-    except:
-        port +=1
-        s.bind((host, port))
+    while(true):
+        try:
+            s.bind((host, port))
+            break;
+        except:
+            port +=1
+            s.bind((host, port))
 
     L = 0
     max = 0
